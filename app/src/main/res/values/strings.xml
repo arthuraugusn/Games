@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Games</string>
+    <string name="login_wave">Login</string>
+    <string name="welcome">Welcome !</string>
+    <string name="login_phrase">With our app it will be much easier and more fun to keep track of your games!</string>
+    <string name="email_login">E-mail</string>
+    <string name="password_login">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_uo">Sign up</string>
+    <string name="developments">Developed by DS2M</string>
+    <string name="new_account">New Account</string>
+    <string name="picture">Choose a picture</string>
+    <string name="data_authentication">Data for authentication</string>
+    <string name="personal_data">Personal data</string>
+    <string name="your_name">What\'s your name?</string>
+    <string name="your_city">What\'s your city?</string>
+    <string name="birthday">Birth date</string>
+    <string name="your_level">What\'s your gaming level?</string>
+    <string name="your_preference_video_game">What\'s your favorite console?</string>
+    <string name="sex">Sex:</string>
+    <string name="fem">Female</string>
+    <string name="masc">Male</string>
+
+    <string-array name="video_games">
+        <item>PlayStation</item>
+        <item>Xbox</item>
+        <item>Super Nintendo</item>
+        <item>Nintendo Switch</item>
+    </string-array>
+</resources>

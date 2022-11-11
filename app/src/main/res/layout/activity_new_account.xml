@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/simple_rose"
-    tools:context=".NewAccount">
+    tools:context=".ui.NewAccount">
 
     <LinearLayout
         android:id="@+id/header"
@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/image_view_choose" />
 
             <EditText
-                android:id="@+id/edit_text_email_sign_up"
+                android:id="@+id/et_email_sign_up"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -97,7 +97,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <EditText
-                android:id="@+id/edit_text_password_sign_up"
+                android:id="@+id/et_passw_sign_up"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -105,9 +105,9 @@
                 android:fontFamily="serif"
                 android:hint="@string/password_login"
                 android:inputType="textPassword"
-                app:layout_constraintEnd_toEndOf="@+id/edit_text_email_sign_up"
-                app:layout_constraintStart_toStartOf="@+id/edit_text_email_sign_up"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_email_sign_up" />
+                app:layout_constraintEnd_toEndOf="@+id/et_email_sign_up"
+                app:layout_constraintStart_toStartOf="@+id/et_email_sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/et_email_sign_up" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -121,11 +121,11 @@
                 android:text="@string/personal_data"
                 android:textColor="@color/blue_games"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/edit_text_password_sign_up"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_password_sign_up" />
+                app:layout_constraintStart_toStartOf="@+id/et_passw_sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/et_passw_sign_up" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/et_person_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -140,7 +140,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/et_person_city"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -148,12 +148,12 @@
                 android:fontFamily="serif"
                 android:hint="@string/your_city"
                 android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+                app:layout_constraintEnd_toEndOf="@+id/et_person_name"
+                app:layout_constraintStart_toStartOf="@+id/et_person_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_person_name" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/et_birthday"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -161,9 +161,9 @@
                 android:fontFamily="serif"
                 android:hint="@string/birthday"
                 android:inputType="date"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                app:layout_constraintEnd_toEndOf="@+id/et_person_city"
+                app:layout_constraintStart_toStartOf="@+id/et_person_city"
+                app:layout_constraintTop_toBottomOf="@+id/et_person_city" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -173,8 +173,8 @@
                 android:fontFamily="serif"
                 android:text="@string/your_level"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/editTextDate"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+                app:layout_constraintStart_toStartOf="@+id/et_birthday"
+                app:layout_constraintTop_toBottomOf="@+id/et_birthday" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider"
@@ -195,9 +195,9 @@
                 android:fontFamily="serif"
                 android:text="TextView"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+                app:layout_constraintEnd_toEndOf="@+id/et_birthday"
                 app:layout_constraintStart_toEndOf="@+id/slider"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+                app:layout_constraintTop_toBottomOf="@+id/et_birthday" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -211,7 +211,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/slider" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spn_console"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:entries="@array/video_games"
@@ -228,8 +228,8 @@
                 android:fontFamily="serif"
                 android:text="@string/sex"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/spinner2"
-                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+                app:layout_constraintStart_toStartOf="@+id/spn_console"
+                app:layout_constraintTop_toBottomOf="@+id/spn_console" />
 
             <RadioGroup
                 android:layout_width="0dp"

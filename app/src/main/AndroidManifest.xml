@@ -14,13 +14,13 @@
         android:theme="@style/Theme.Games"
         tools:targetApi="31">
         <activity
-            android:name=".UserGames"
+            android:name=".ui.UserGames"
             android:exported="false" />
         <activity
-            android:name=".NewAccount"
+            android:name=".ui.NewAccount"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

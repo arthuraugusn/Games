@@ -17,7 +17,7 @@ class ConsoleRepository(context: Context) {
     fun updateConsole(console: Console):Int{
         return dataBase.updateConsole(console)
     }
-    fun getAllConsoles():List<Console>{
+    fun getAllConsoles():List<String>{
         return dataBase.getAllConsoles()
     }
     fun getConsoleById(id:Int): Console {

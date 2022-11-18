@@ -53,8 +53,8 @@ interface SmGamesDao{
     fun getGameById(id:Int): Game
 
     //Mostra todos os consoles de forma ascendente
-    @Query("select * from tbl_console order by name asc")
-    fun getAllConsoles():List<Console>
+    @Query("select name from tbl_console order by name asc")
+    fun getAllConsoles():List<String>
 
     //Busca console pelo id
     @Query("select * from tbl_console where id = :id")

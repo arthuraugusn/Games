@@ -10,10 +10,10 @@ class Game{
     @PrimaryKey(autoGenerate = true)
     var id = 0
 
-    var photo: Bitmap? = null
+//    var photo: Bitmap? = null
     var title = ""
     var description = ""
     var studio = ""
-    var launchYear: LocalDate? = null
-    var finished = Boolean
+//    var launchYear: LocalDate? = null
+//    var finished = Boolean
 }

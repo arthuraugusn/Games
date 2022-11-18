@@ -13,6 +13,6 @@ class Console{
     var name = ""
     var producer = ""
     var description = ""
-    var photo: Bitmap?= null
+//    var photo: Bitmap?= null
     var launchYear= 0
 }

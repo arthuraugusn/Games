@@ -59,4 +59,8 @@ interface SmGamesDao{
     //Busca console pelo id
     @Query("select * from tbl_console where id = :id")
     fun getConsoleById(id:Int): Console
+
+    //Tras todos os usuários com email e senha
+    @Query("select * from tbl_user where email = :email and password = :password")
+    fun getUser(email:String, password:String): User
 }

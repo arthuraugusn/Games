@@ -7,6 +7,8 @@ import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.forEach
+import androidx.core.view.isEmpty
+import androidx.core.view.size
 import br.senai.sp.jandira.games.R
 import br.senai.sp.jandira.games.databinding.ActivityNewAccountBinding
 import br.senai.sp.jandira.games.model.Console
@@ -23,7 +25,6 @@ class NewAccount : AppCompatActivity() {
     lateinit var userRepository: UserRepository
     lateinit var consoleRepository: ConsoleRepository
     lateinit var user:User
-    lateinit var console: Console
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +32,6 @@ class NewAccount : AppCompatActivity() {
         binding = ActivityNewAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
         user = User()
-        console = Console()
-
-        saveConsole()
 
         binding.txtLevel.text = EnumLevels.BEGINNER.toString()
 
@@ -52,20 +50,13 @@ class NewAccount : AppCompatActivity() {
             }
         }
 
+        consoleRepository = ConsoleRepository(this)
+
         val arrayS = consoleRepository.getAllConsoles()
+
         val arrayA = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, arrayS)
         binding.spnConsole.adapter = arrayA
-    }
 
-    private fun saveConsole() {
-        consoleRepository = ConsoleRepository(this)
-        console.name = "Playstation 3"
-        console.producer = "Sony"
-        console.description = "O PlayStation 3 (PS3) é um console de videogames desenvolvido pela Sony Computer Entertainment."
-        console.launchYear = 2008
-
-        consoleRepository.saveConsole(console)
-        Toast.makeText(this, "save", Toast.LENGTH_SHORT).show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -84,11 +75,13 @@ class NewAccount : AppCompatActivity() {
         user.email = binding.etEmailSignUp.text.toString()
         user.password = binding.etPasswSignUp.text.toString()
         user.city = binding.etPersonCity.text.toString()
-//        user.birthDate = LocalDate.parse(binding.etBirthday.text.toString())
+        user.birthDate = binding.etBirthday.text.toString()
 //        user.photo = null
-//        user.console = consoleRepository.getConsoleById(1)
-        user.level = binding.txtLevel.toString()
-        user.sex = 'M'
+        user.console = consoleRepository.getConsoleById(1).name
+        user.level = EnumLevels.valueOf(binding.txtLevel.text.toString())
+        val op = binding.rgGender!!.checkedRadioButtonId
+
+        user.sex = op.toChar()
 
         userRepository.saveUser(user)
         finish()

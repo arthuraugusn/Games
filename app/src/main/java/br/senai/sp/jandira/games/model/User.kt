@@ -1,9 +1,8 @@
 package br.senai.sp.jandira.games.model
 
-import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.time.LocalDate
+import java.util.*
 
 @Entity(tableName = "tbl_user")
 class User{
@@ -16,8 +15,8 @@ class User{
     var password = ""
     var name = ""
     var city = ""
-//    var birthDate: LocalDate? = null
+    var birthDate = ""
     var sex = 'I' //Char é '',  1 caracter
-    var console= ""
-    var level = ""
+    var console = ""
+    var level: EnumLevels? = null
 }

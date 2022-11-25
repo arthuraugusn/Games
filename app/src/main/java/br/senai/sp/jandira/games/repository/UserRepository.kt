@@ -17,4 +17,7 @@ class UserRepository(context: Context) {
     fun updateUser(user: User):Int{
         return dataBase.updateUser(user)
     }
+    fun getUser(email: String, password: String):User{
+        return  dataBase.getUser(email, password)
+    }
 }

@@ -4,30 +4,44 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.senai.sp.jandira.games.adapter.GamesAdapter
 import br.senai.sp.jandira.games.databinding.ActivityUserGamesBinding
+import br.senai.sp.jandira.games.repository.GamesRepository
 
 class UserGames : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserGamesBinding
+    lateinit var gamesRepository: GamesRepository
     lateinit var rvGames: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        /*binding = ActivityUserGamesBinding.inflate(layoutInflater)
-
-        rvGames =binding.rvGames
-
-        rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-        adapterGames = GamesAdapter(this)
-
-        adapterGames.updateGamesList(GamesDao.getGames(this))
+        binding = ActivityUserGamesBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-
         supportActionBar!!.hide()
 
-        rvGames.adapter = adapterGames*/
+        rvGames = binding.rvGames
+        rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        val adapterGames = GamesAdapter(this)
+
+        gamesRepository = GamesRepository(this)
+
+        adapterGames.updateGamesList(gamesRepository.getAllGames())
+
+        rvGames.adapter = adapterGames
+
+        carregarInfosUsuario()
+    }
+
+    private fun carregarInfosUsuario() {
+        val email = intent.getStringExtra("email")
+        binding.emailUser.text = email.toString()
+        val name = intent.getStringExtra("name")
+        binding.nameUser.text = name.toString()
+        val level = intent.getStringExtra("level")
+        binding.levelUser.text = level
     }
 }

@@ -213,7 +213,6 @@
                 android:id="@+id/spn_console"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:entries="@array/video_games"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="@+id/textView15"
                 app:layout_constraintStart_toStartOf="@+id/textView15"
@@ -231,6 +230,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/spn_console" />
 
             <RadioGroup
+                android:id="@+id/rg_gender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -242,7 +242,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView16">
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/rb_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="20dp"
@@ -250,7 +250,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/rb_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/masc" />

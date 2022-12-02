@@ -26,6 +26,7 @@
     <string name="currently_playing">Currently Playing</string>
     <string name="idade_user">Age</string>
     <string name="level_user">Seu level</string>
+    <string name="games">0</string>
 
 <!--    <string-array name="video_games">
         <item>PlayStation</item>

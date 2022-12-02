@@ -15,7 +15,7 @@ class User{
     var password = ""
     var name = ""
     var city = ""
-    var birthDate = ""
+    var birthDate = 0
     var sex = 'I' //Char é '',  1 caracter
     var console = ""
     var level: EnumLevels? = null

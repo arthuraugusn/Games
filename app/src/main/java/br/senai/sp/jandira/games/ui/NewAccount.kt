@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.games.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -18,6 +19,7 @@ import br.senai.sp.jandira.games.repository.ConsoleRepository
 import br.senai.sp.jandira.games.repository.GamesRepository
 import br.senai.sp.jandira.games.repository.UserRepository
 import java.time.LocalDate
+import java.time.Year
 
 class NewAccount : AppCompatActivity() {
 
@@ -75,7 +77,9 @@ class NewAccount : AppCompatActivity() {
         user.email = binding.etEmailSignUp.text.toString()
         user.password = binding.etPasswSignUp.text.toString()
         user.city = binding.etPersonCity.text.toString()
-        user.birthDate = binding.etBirthday.text.toString()
+        val anoUsuario = binding.etBirthday.text.toString().substring(0, 4).toInt()
+        val anoAtual = Year.now().value
+        user.birthDate = anoAtual - anoUsuario
 //        user.photo = null
         user.console = consoleRepository.getConsoleById(1).name
         user.level = EnumLevels.valueOf(binding.txtLevel.text.toString())

@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
             userGames.putExtra("name", user.name)
             userGames.putExtra("email", user.email)
             userGames.putExtra("level", user.level.toString())
+            userGames.putExtra("idade", user.birthDate)
             startActivity(userGames)
         }
     }

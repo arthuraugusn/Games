@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/email_user"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/name_user"
                 app:layout_constraintTop_toBottomOf="@+id/name_user" />
 
@@ -74,10 +75,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_games_finished"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginTop="8dp"
+            android:text="@string/games"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -91,9 +94,10 @@
             app:layout_constraintTop_toTopOf="@+id/textView18" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/tv_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="@+id/textView14"
             app:layout_constraintStart_toStartOf="@+id/textView14"
@@ -109,10 +113,11 @@
             app:layout_constraintTop_toTopOf="@+id/textView9" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/tv_playing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginTop="8dp"
+            android:text="@string/games"
             app:layout_constraintEnd_toEndOf="@+id/textView18"
             app:layout_constraintStart_toStartOf="@+id/textView18"
             app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -131,9 +136,13 @@
             android:id="@+id/level_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/level_user"
-            tools:layout_editor_absoluteX="44dp"
-            tools:layout_editor_absoluteY="10dp" />
+            android:textColor="@color/white"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.senai.sp.jandira.games.adapter.GamesAdapter
+import br.senai.sp.jandira.games.adapter.JogosAdapter
+import br.senai.sp.jandira.games.dao.JogosDao
 import br.senai.sp.jandira.games.databinding.ActivityUserGamesBinding
 import br.senai.sp.jandira.games.repository.GamesRepository
 
@@ -25,11 +27,11 @@ class UserGames : AppCompatActivity() {
         rvGames = binding.rvGames
         rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        val adapterGames = GamesAdapter(this)
+        val adapterGames = JogosAdapter(this)
 
         gamesRepository = GamesRepository(this)
 
-        adapterGames.updateGamesList(gamesRepository.getAllGames())
+        adapterGames.updateGamesList(JogosDao.getGames(this))
 
         rvGames.adapter = adapterGames
 
@@ -43,5 +45,7 @@ class UserGames : AppCompatActivity() {
         binding.nameUser.text = name.toString()
         val level = intent.getStringExtra("level")
         binding.levelUser.text = level
+        val idade = intent.getIntExtra("idade", 0)
+        binding.tvAge.text = idade.toString()
     }
 }
